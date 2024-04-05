@@ -8,7 +8,7 @@ export default function InputBox({ id, label, Data, value, setValue, error, setE
       disablePortal
       id={id}
       options={Data} //provide optiobs
-      sx={{ width: 300, backgroundColor: "#fff"}}
+      sx={{ width: 300}}
       onChange={(event, newValue) => {
         setValue(newValue);
         setErrorText(null);
@@ -20,7 +20,6 @@ export default function InputBox({ id, label, Data, value, setValue, error, setE
           onChange={(e) => setValue(e.target.value)}
           label={label}
           variant="filled"
-          sx={{ backgroundColor: "#fff" }}
           error={error ? true : false}
           helperText={error}
         />

@@ -90,7 +90,7 @@ export default function InputForm({
               label="Date of Departure"
               value={date}
               onChange={(newValue) => setDate(newValue)}
-              sx={{ backgroundColor: "#fff", flex: 1 }}
+              sx={{ flex: 1 }}
             />
           </DemoContainer>
         </LocalizationProvider>
