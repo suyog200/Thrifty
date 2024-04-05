@@ -1,10 +1,11 @@
+import Navbar from './components/Navbar'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <h1>Thrifty.ai</h1>
+      <Navbar />
     </>
   )
 }
