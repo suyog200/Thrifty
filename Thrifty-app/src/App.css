@@ -8,3 +8,9 @@
   /* hello */
   /* hello */
 }
+.bg-image img {
+  /* background-repeat: no-repeat; */
+  height: 80vh;
+  width: 100vw;
+  background-size: cover;
+}
