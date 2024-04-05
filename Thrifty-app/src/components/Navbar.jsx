@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import LogoImg from '../assets/images/thrifty.png';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -30,7 +31,7 @@ export default function Navbar(props) {
       const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
           <Typography variant="h6" sx={{ my: 2 }}>
-            MUI
+            Thrifty.ai
           </Typography>
           <Divider />
           <List>
@@ -50,7 +51,7 @@ export default function Navbar(props) {
     return (
         <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar component="nav">
+        <AppBar component="nav" sx={{backgroundColor: '#fff'}}>
           <Toolbar>
             <IconButton
               color="inherit"
@@ -61,17 +62,19 @@ export default function Navbar(props) {
             >
               <MenuIcon />
             </IconButton>
+            <img src={LogoImg} alt="logo" style={{ width: '40px', height: '40px' }} />
             <Typography
               className='dancingFont'
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+              sx={{ flexGrow: 1}}
+              color={'#3498DB'}
             >
               Thrifty.ai
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
+                <Button key={item} sx={{ color: '#3498DB', fontWeight: '700' }}>
                   {item}
                 </Button>
               ))}
@@ -89,7 +92,7 @@ export default function Navbar(props) {
             }}
             sx={{
               display: { xs: 'block', sm: 'none' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth},
             }}
           >
             {drawer}
