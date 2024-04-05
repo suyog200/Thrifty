@@ -1,6 +1,7 @@
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
+// eslint-disable-next-line react/prop-types
 export default function InputBox({ id, label, Data }) {
   return (
     <Autocomplete
@@ -13,7 +14,7 @@ export default function InputBox({ id, label, Data }) {
           {...params}
           label={label}
           variant="filled"
-          sx={{ backgroundColor: "#fff"}}
+          sx={{ backgroundColor: "#fff" }}
         />
       )}
     />
