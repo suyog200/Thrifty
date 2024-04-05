@@ -62,6 +62,7 @@ export default function Navbar(props) {
             >
               <MenuIcon />
             </IconButton>
+            <a href='/' style={{display : 'flex' , alignItems : 'center' , textDecoration:'none'}}>
             <img src={LogoImg} alt="logo" style={{ width: '40px', height: '40px' }} />
             <Typography
               className='dancingFont'
@@ -72,6 +73,7 @@ export default function Navbar(props) {
             >
               Thrifty.ai
             </Typography>
+            </a>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
                 <Button key={item} sx={{ color: '#3498DB', fontWeight: '700' }}>
