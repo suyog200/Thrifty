@@ -54,7 +54,7 @@ export default function Navbar(props) {
         <AppBar component="nav" sx={{backgroundColor: '#fff'}}>
           <Toolbar>
             <IconButton
-              color="inherit"
+              color="#000"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
