@@ -39,5 +39,8 @@ export const classes = classes_raw
   .sort()
   .map((class_type, index) => ({ label: class_type, id: index }));
 
-// const arrival_times_raw = ['Night','Morning','Early_Morning','Afternoon','Evening','Late_Night'];
-// export const arrival_times = arrival_times_raw.sort().map((time, index) => ({label: time, id: index}));
+const departure_times_raw = ['Night','Morning','Early_Morning','Afternoon','Evening','Late_Night'];
+export const departure_times = departure_times_raw.sort().map((time, index) => ({label: time, id: index}));
+
+const no_of_stops_raw = ['0 Stops','1 Stops','2 or more stops'];
+export const no_of_stops = no_of_stops_raw.sort().map((stops, index) => ({label: stops, id: index}));
