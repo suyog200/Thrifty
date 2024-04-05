@@ -29,7 +29,7 @@ export default function Navbar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Thrifty.ai
+        Thriftify.ai
       </Typography>
       <Divider />
       <List>
@@ -73,7 +73,7 @@ export default function Navbar(props) {
             sx={{ flexGrow: 1 }}
             color={"#3498DB"}
           >
-            Thrifty.ai
+            Thriftify.ai
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
