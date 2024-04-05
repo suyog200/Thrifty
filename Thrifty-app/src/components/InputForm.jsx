@@ -14,7 +14,7 @@ import {
 } from "../data/constants";
 
 export default function InputForm() {
-  const [value, setValue] = useState(dayjs("2022-04-17"));
+  const [value, setValue] = useState();
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function InputForm() {
             sx={{ paddingTop: "0", overflow: "visible", width: "100%" }}
           >
             <DatePicker
-              label="Date of Journey"
+              label="Date of Departure"
               value={value}
               onChange={(newValue) => setValue(newValue)}
               sx={{ backgroundColor: "#fff", flex: 1 }}
