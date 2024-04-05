@@ -8,10 +8,14 @@
   /* hello */
   /* hello */
 }
+.bg-image {
+  width: 100%;
+  height: 100vh;
+}
 .bg-image img {
   /* background-repeat: no-repeat; */
-  height: 100vh;
-  width: 100vw;
-  background-size: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 /* updated */
