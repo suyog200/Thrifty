@@ -9,7 +9,9 @@ const Home = () => {
       <div className="bg-image">
         <img src={Image} alt="Image" />
       </div>
-      <InputForm />
+      <div className="input-form">
+        <InputForm />
+      </div>
     </div>
   );
 };
