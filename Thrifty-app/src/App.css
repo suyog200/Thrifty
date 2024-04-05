@@ -32,4 +32,28 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   z-index: 2;
+  margin-bottom: 25px;
+}
+
+.search-btn {
+  width: 230px;
+}
+
+@media screen and (max-width: 1000px) {
+  .inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .inputs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .search-btn {
+    width: 100%;
+  }
 }
