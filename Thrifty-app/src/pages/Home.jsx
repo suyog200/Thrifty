@@ -113,8 +113,7 @@ const Home = () => {
         />
         <Button
           size="large"
-          sx={{ mt: "25px", width: "220px" }}
-          className="Search-btn"
+          className="search-btn"
           variant="contained"
           onClick={handleClick}
         >
