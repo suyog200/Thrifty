@@ -20,7 +20,7 @@ export default function InputForm() {
     <>
       <div className="inputs">
         <InputBox id="airlines" label="Airlines" Data={airlines} />
-        <InputBox id="source" label="Source" Data={source_cities} />
+        <InputBox id="Departure" label="Departure" Data={source_cities} />
         <InputBox
           id="destination"
           label="Destination"
