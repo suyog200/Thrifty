@@ -148,7 +148,7 @@ const Home = () => {
         </Button>
       </div>
       <Table predictedData={predictedData} airlines={airlines?.label} source={source?.label} destination={destination?.label} classType={classType?.label}
-      date={date}
+      date={dayjs(date).format("YYYY-MM-DD")}
       />
     </div>
   );

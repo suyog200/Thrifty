@@ -13,7 +13,8 @@ const Table = ({predictedData, airlines, source, destination, classType, date}) 
 
   console.log(predictedData);
 
-  const predictedDataArray = [predictedData];
+  const predictedDataArray = Object.values(predictedData);
+  console.log(predictedDataArray);
 
   const displayData = predictedDataArray ?
   predictedDataArray.slice(pagesVisited, pagesVisited + recordsPerPage)
@@ -26,7 +27,7 @@ const Table = ({predictedData, airlines, source, destination, classType, date}) 
           <td>{destination}</td>
           <td>{date}</td>
           <td>{classType}</td>
-          {/* <td>{row.predictedData[index + 1]}</td> */}
+          <td>{row}</td>
         </tr>
       );
     }) :
