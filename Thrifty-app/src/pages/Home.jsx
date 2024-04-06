@@ -28,7 +28,29 @@ const Home = () => {
   const [noOfStops, setNoOfStops] = useState();
   const [noOfStopsError, setNoOfStopsError] = useState(false);
 
-  const handleClick = () => {
+  async function predictFlight() {
+    const formattedDate = dayjs(date).format("YYYY-MM-DD");
+    fetch("http://127.0.0.1:5000/predict",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        airline: airlines.id,
+        source_city: source.id,
+        destination_city: destination.id,
+        days_left: formattedDate.toLocaleLowerCase(),
+        f_class: classType.id,
+        departure_time: departureTime.id,
+        stops: noOfStops.id,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  }
+
+  const handleClick = async () => {
     // perform validation
     if (!airlines) {
       setAirlinesError("Please select an airline");
@@ -70,15 +92,9 @@ const Home = () => {
     const difference = dayjs(formattedDate).diff(dayjs(), "day");
     console.log(difference);
 
-    console.log(
-      airlines,
-      source,
-      destination,
-      formattedDate.toLocaleLowerCase(),
-      classType,
-      departureTime,
-      noOfStops
-    );
+    await predictFlight();
+
+    console.log(airlines, source, destination, formattedDate.toLocaleLowerCase(), classType, departureTime, noOfStops);
   };
 
   return (
