@@ -28,6 +28,8 @@ const Home = () => {
   const [noOfStops, setNoOfStops] = useState();
   const [noOfStopsError, setNoOfStopsError] = useState(false);
 
+  const [predictedData, setPredictedData] = useState({});
+
   async function predictFlight() {
     const formattedDate = dayjs(date).format("YYYY-MM-DD");
     fetch("http://127.0.0.1:5000/predict",{
@@ -46,7 +48,9 @@ const Home = () => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => 
+      setPredictedData(data)
+    )
       .catch((error) => console.log(error));
   }
 
@@ -139,7 +143,9 @@ const Home = () => {
           Search
         </Button>
       </div>
-      <Table />
+      <Table predictedData={predictedData} airlines={airlines?.label} source={source?.label} destination={destination?.label} classType={classType?.label}
+      date={date}
+      />
     </div>
   );
 };

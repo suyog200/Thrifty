@@ -1,192 +1,38 @@
-// // import React from 'react'
 
-// const Table = () => {
-//   return (
-//     <div className="table-container">
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>Airline</th>
-//             <th>Departure</th>
-//             <th>Destination</th>
-//             <th>Date of Departure</th>
-//             <th>Class</th>
-//             <th>Prices</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           <tr>
-//             <td>AirAsia</td>
-//             <td>Bangalore</td>
-//             <td>Goa</td>
-//             <td>04/20/2024</td>
-//             <td>Business</td>
-//             <td>3000</td>
-//           </tr>
-//           <tr>
-//             <td>AirAsia</td>
-//             <td>Bangalore</td>
-//             <td>Goa</td>
-//             <td>04/20/2024</td>
-//             <td>Business</td>
-//             <td>3000</td>
-//           </tr>
-//           <tr>
-//             <td>AirAsia</td>
-//             <td>Bangalore</td>
-//             <td>Goa</td>
-//             <td>04/20/2024</td>
-//             <td>Business</td>
-//             <td>3000</td>
-//           </tr>
-//           {/* Add more rows if needed */}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// };
-
-// export default Table;
 
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
 
-const Table = () => {
-  // Static data
-  const staticData = [
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    {
-      airline: "AirAsia",
-      departure: "Bangalore",
-      destination: "Goa",
-      date: "04/20/2024",
-      class: "Business",
-      price: "3000",
-    },
-    // Add more static data as needed
-  ];
+// eslint-disable-next-line react/prop-types
+const Table = ({predictedData, airlines, source, destination, classType, date}) => {
+ 
 
   const [pageNumber, setPageNumber] = useState(0);
   const recordsPerPage = 10;
   const pagesVisited = pageNumber * recordsPerPage;
 
-  const displayData = staticData
-    .slice(pagesVisited, pagesVisited + recordsPerPage)
-    .map((row, index) => (
-      <tr key={index}>
-        <td>{row.airline}</td>
-        <td>{row.departure}</td>
-        <td>{row.destination}</td>
-        <td>{row.date}</td>
-        <td>{row.class}</td>
-        <td>{row.price}</td>
-      </tr>
-    ));
+  console.log(predictedData);
 
-  const pageCount = Math.ceil(staticData.length / recordsPerPage);
+  const predictedDataArray = [predictedData];
+
+  const displayData = predictedDataArray ?
+  predictedDataArray.slice(pagesVisited, pagesVisited + recordsPerPage)
+    .map((row, index) => {
+      console.log(row);
+      return (
+        <tr key={index}>
+          <td>{airlines}</td>
+          <td>{source}</td>
+          <td>{destination}</td>
+          <td>{date}</td>
+          <td>{classType}</td>
+          {/* <td>{row.predictedData[index + 1]}</td> */}
+        </tr>
+      );
+    }) :
+  <tr><td colSpan="6">No data</td></tr>;
+
+  const pageCount = Math.ceil(predictedDataArray.length / recordsPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
@@ -205,7 +51,8 @@ const Table = () => {
             <th>Prices</th>
           </tr>
         </thead>
-        <tbody>{displayData}</tbody>
+        <tbody>{displayData}
+        </tbody>
       </table>
       <ReactPaginate
         previousLabel={"Previous"}
