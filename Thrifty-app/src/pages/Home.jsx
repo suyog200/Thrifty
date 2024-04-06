@@ -1,9 +1,10 @@
-import {useState} from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Image from "../assets/images/Img1.jpg";
 import InputForm from "../components/InputForm";
 import Button from "@mui/material/Button";
 import dayjs from "dayjs";
+import Table from "../components/Table";
 
 const Home = () => {
   const [airlines, setAirlines] = useState();
@@ -99,37 +100,31 @@ const Home = () => {
         <img src={Image} alt="Image" />
       </div>
       <div className="input-form">
-        <InputForm 
+        <InputForm
           airliness={airlines}
           setAirlines={setAirlines}
           airlinesError={airlinesError}
           setAirlinesError={setAirlinesError}
-
           source={source}
           setSource={setSource}
           sourceError={sourceError}
           setSourceError={setSourceError}
-
           destination={destination}
           setDestination={setDestination}
           destinationError={destinationError}
           setDestinationError={setDestinationError}
-
           date={date}
           setDate={setDate}
           dateError={dateError}
           setDateError={setDateError}
-
           classType={classType}
           setClassType={setClassType}
           classTypeError={classTypeError}
           setClassTypeError={setClassTypeError}
-
           departureTime={departureTime}
           setDepartureTime={setDepartureTime}
           departureTimeError={departureTimeError}
           setDepartureTimeError={setDepartureTimeError}
-
           noOfStops={noOfStops}
           setNoOfStops={setNoOfStops}
           noOfStopsError={noOfStopsError}
@@ -144,6 +139,7 @@ const Home = () => {
           Search
         </Button>
       </div>
+      <Table />
     </div>
   );
 };
