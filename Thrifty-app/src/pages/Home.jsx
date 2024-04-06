@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Image from "../assets/images/Img1.jpg";
+import Video from "../assets/videos/airport.mp4";
 import InputForm from "../components/InputForm";
 import Button from "@mui/material/Button";
 import dayjs from "dayjs";
@@ -27,6 +28,8 @@ const Home = () => {
 
   const [noOfStops, setNoOfStops] = useState();
   const [noOfStopsError, setNoOfStopsError] = useState(false);
+
+  const [predictedData, setPredictedData] = useState([]);
 
   async function predictFlight() {
     const formattedDate = dayjs(date).format("YYYY-MM-DD");
@@ -97,7 +100,10 @@ const Home = () => {
     <div>
       <Navbar />
       <div className="bg-image">
-        <img src={Image} alt="Image" />
+        {/* <img src={Image} alt="Image" /> */}
+        <video autoPlay loop muted>
+          <source src={Video} type="video/mp4" />
+        </video>
       </div>
       <div className="input-form">
         <InputForm

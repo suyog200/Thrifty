@@ -12,7 +12,7 @@
   height: 100vh;
   /* background-color: rgba(0, 0, 0, 0.158); */
 }
-.bg-image img {
+.bg-image video {
   /* background-repeat: no-repeat; */
   height: 100%;
   width: 100%;
