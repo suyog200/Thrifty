@@ -39,11 +39,11 @@ const Table = ({predictedData, airlines, source, destination, classType, date}) 
   };
 
   return (
-    <div className="table-container">
+    <div className="table-container" style={{ overflowX: "auto" }}>
       <table className="table">
         <thead>
           <tr>
-            <th>Airline</th>
+            <th style={{ width: "200px" }}>Airline</th>
             <th>Departure</th>
             <th>Destination</th>
             <th>Date of Departure</th>

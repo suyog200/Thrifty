@@ -58,31 +58,35 @@ const Home = () => {
     // perform validation
     if (!airlines) {
       setAirlinesError("Please select an airline");
-      // return;
+      return;
     }
     if (!source) {
       setSourceError("Please select a source city");
-      // return;
+      return;
     }
     if (!destination) {
       setDestinationError("Please select a destination city");
-      // return;
+      return;
     }
     if (!classType) {
       setClassTypeError("Please select a class type");
-      // return;
+      return;
     }
     if (!departureTime) {
       setDepartureTimeError("Please select a departure time");
-      // return;
+      return;
     }
     if (!noOfStops) {
       setNoOfStopsError("Please select number of stops");
-      // return;
+      return;
     }
     if (!date) {
       setDateError("Please select a date");
       return;
+    }
+
+    if (destination.id === source.id) {
+      setDestinationError("Cannot select same city");
     }
     // convert date to required format
     const formattedDate = dayjs(date).format("YYYY-MM-DD");
