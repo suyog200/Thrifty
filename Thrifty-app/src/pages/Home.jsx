@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import Image from "../assets/images/Img1.jpg";
 import Video from "../assets/videos/airport.mp4";
 import InputForm from "../components/InputForm";
 import Button from "@mui/material/Button";
