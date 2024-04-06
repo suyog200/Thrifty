@@ -11,13 +11,8 @@ const Table = ({predictedData, airlines, source, destination, classType, date}) 
   const recordsPerPage = 10;
   const pagesVisited = pageNumber * recordsPerPage;
 
-  console.log(predictedData);
-
-  const predictedDataArray = Object.values(predictedData);
-  console.log(predictedDataArray);
-
-  const displayData = predictedDataArray.length > 0 ?
-  predictedDataArray.slice(pagesVisited, pagesVisited + recordsPerPage)
+  const displayData =
+  predictedData.slice(pagesVisited, pagesVisited + recordsPerPage)
     .map((row, index) => {
       console.log(row);
       return (
@@ -25,23 +20,20 @@ const Table = ({predictedData, airlines, source, destination, classType, date}) 
           <td>{airlines}</td>
           <td>{source}</td>
           <td>{destination}</td>
-          <td>{date}</td>
+          <td>{row.date}</td>
           <td>{classType}</td>
-          <td>{row}</td>
+          <td>{row.price}</td>
         </tr>
       );
-    }) :
-  <tr><td colSpan="6">Loading...</td></tr>;
+    })
 
-  const pageCount = Math.ceil(predictedDataArray.length / recordsPerPage);
+  const pageCount = Math.ceil(predictedData.length / recordsPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
 
   return (
-    !displayData ? 
-    <div>No Data</div> : 
     <div className="table-container" style={{ overflowX: "auto" }}>
       <table className="table">
         <thead>

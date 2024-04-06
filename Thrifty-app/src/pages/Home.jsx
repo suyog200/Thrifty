@@ -28,7 +28,7 @@ const Home = () => {
   const [noOfStops, setNoOfStops] = useState();
   const [noOfStopsError, setNoOfStopsError] = useState(false);
 
-  const [predictedData, setPredictedData] = useState({});
+  const [predictedData, setPredictedData] = useState([]);
 
   async function predictFlight() {
     const formattedDate = dayjs(date).format("YYYY-MM-DD");
@@ -41,7 +41,7 @@ const Home = () => {
         airline: airlines.id,
         source_city: source.id,
         destination_city: destination.id,
-        days_left: formattedDate.toLocaleLowerCase(),
+        date: formattedDate.toLocaleLowerCase(),
         f_class: classType.id,
         departure_time: departureTime.id,
         stops: noOfStops.id,
@@ -150,9 +150,12 @@ const Home = () => {
           Search
         </Button>
       </div>
-      <Table predictedData={predictedData} airlines={airlines?.label} source={source?.label} destination={destination?.label} classType={classType?.label}
-      date={dayjs(date).format("YYYY-MM-DD")}
-      />
+      {
+        predictedData.length > 0 && 
+        <Table predictedData={predictedData} airlines={airlines?.label} source={source?.label} destination={destination?.label} classType={classType?.label}
+        date={dayjs(date).format("YYYY-MM-DD")}
+        />
+      }
     </div>
   );
 };
