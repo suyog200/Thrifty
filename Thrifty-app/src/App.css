@@ -116,7 +116,15 @@ th {
   .search-btn {
     width: 100%;
   }
+  .table {
+    overflow: scroll;
+  }
 }
+/* @media screen and (max-width: 530px) {
+  .table {
+    overflow: scroll;
+  }
+} */
 
 .MuiInputBase-root {
   background-color: white !important;
